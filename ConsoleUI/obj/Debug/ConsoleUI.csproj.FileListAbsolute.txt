@@ -1,0 +1,8 @@
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.exe
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.pdb
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.exe
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.pdb
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\Backgammon.dll
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\Backgammon.pdb
+C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache

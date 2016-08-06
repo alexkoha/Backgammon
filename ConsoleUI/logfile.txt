@@ -1,0 +1,4 @@
+Data Time:31/07/2016 21:30:00
+Control Name:White make move
+Error Line No.:109
+Form Name:RegisterMove
