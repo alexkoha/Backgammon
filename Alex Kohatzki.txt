@@ -1,0 +1,83 @@
+1)There will always be comments, which is natural since we can always do better, but girst thing's first- congradulations on an assignment very well done!
+
+2)You have discovered for yourself a very advanced principle in Software Design called "Inversion of Control" - by passing the UI as a reference to the game controller.
+Do read further regarding this principle in order to formalize your knowldege and further expand it.
+
+3)I am glad to see that you took the even oriented approach- which makes writing complex systems a lot easier- as you have discovered.
+
+4)In the case of the console application, indeed it is easier to redraw the entire UI, therefore using the basic EventHandle delegate would be enough.
+
+5)However, if you were ever to implement your own UI for this game - it would not suffice since redrawing an actual UI just because something moved would be less than effective
+Therefore it would be a better approach to expose custom delegates for your events which pass with them information regarding the event. consider the following pseude class
+
+MovementEventArgs : EventArgs
+{
+	
+	MovementData MovementSource;
+	MovementData MovementTarget;
+	int PieceId;	
+	bool MovedToBar;
+}
+
+The UI would then use this information to remove this piece from its current place and move it to another.
+
+6)Something you should consider in the future, is that the subscriber for the events should not directly trigger events as a single purpose of some operation, which is something you did quite a lot.
+The class which publishes the events should trigger them on its own accord due to something which requires it.
+
+Example (taken from line 102 of the RunGame class:
+--------------------------------------------------------------------
+    try
+            {
+                var isMoveDone = Game.CurrentPlayer.MakeMove(source - 1, target - 1);
+                if (isMoveDone == false)
+                {
+                    Console.WriteLine("This Move wrong.Try Again!");
+                    Console.WriteLine("[Enter] Continue");
+                    Console.ReadLine();
+                }
+            }
+            catch (IndexOutOfRangeException exception)
+            {
+                Console.WriteLine(exception.Message);
+                Console.Read();
+            }
+
+            
+
+            _game.Events.OnUpDateScreen();
+            _game.Events.OnUpdateGame();
+			
+---------------------------------------------------------------
+
+don't you think it would be more appropriate if MakeMove invoked the OnUpdateScreen and OnUpdateGame methods?
+This way, you would not have to re-write these lines of code in every UI application you wrote for the engine, since it is the engine's responsibility to notify the UI that it should re-render itself.
+Consider the following rule of thumb:
+If you use an API (such as your game engine), and the API's design dictates that each application has to repeat the exact same actions for it to work- than these actions probably belong inside the API code, not in the applications.
+ 
+
+7)Encapsulation is a very broad term to grasp, one thing which sure helps is the following:
+Whenever you use more than one dot to access some object's state, your design is probably non-encapsulating.
+Example: '_game.Events.OnUpDateScreen();'
+But there's more than one way to break encapsulation:
+Example:  '_game.RollTheDice(_game.CurrentPlayer);'
+You could replace this code with '_game.RollTheDice();' since the current player is a part of the game's state.
+
+8)Clarity of code is an integral part of writing high quality software which stands the test of time.
+You are definitely on your way there, but consider shortening methods, dividing long methods into shorter ones and giving them good names which describe what they do.
+This will also make tracing bugs a lot easier since each method is small and well defined.
+Exammple: 'GameState.SearchAllPossibleMoves' is everything you should avoid.
+
+Consider giving classes better names. Example: PreGame - does not imply this class has anything to do with dice.
+In fact, its name does not give away any meaning, which is bad since I have to stop reading code which uses this class and dive in just to understand what it does.
+A properly named class would not require having a look inside since its name and methods would describe its purpose and operations, which 'PreGame.PreGameWin' does not do at all.
+
+Using unclean code creates problems with traceability (the ease of navigating your code), which, in the case of a bug- is very crucial.
+I strongly reccomend that you focus on the readability of your code
+Code which is unclear is everybody's problem- team mates will have a hard time understanding you, and so will you, once enough time is passed
+try having a look at this project in six months and you will understand exactly what I am talking about.
+Bugs have the annoying tendency of being discovered over time- not immediately, so traceability and readability is key in every software artifact you create.
+ 
+9)PlayerPC and PlayerHuman seem to duplicate code.. consider applying the DRY (Dont repeat yourself) principle.
+You could use the player base class for common operations, creating virtual methods in order to add functionality, such as in 'AskMove'
+
+10)Avoid magic numbers - constant integers in the code. this hinders readability.

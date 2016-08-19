@@ -6,3 +6,11 @@ C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.pdb
 C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\Backgammon.dll
 C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\bin\Debug\Backgammon.pdb
 C:\Users\Alex\Desktop\CodeValue\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.exe
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.pdb
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.exe
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\bin\Debug\ConsoleUI.pdb
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\bin\Debug\Backgammon.dll
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\bin\Debug\Backgammon.pdb
+D:\git\codevalue\advanced-net-course\home-assignments\Backgammon\Alex Kohatzki\Backgammon\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
